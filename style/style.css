@@ -27,3 +27,21 @@ main {
   body {
     overflow-x: hidden;
   }
+
+
+  h1.display-5 {
+  font-family: 'Poppins', sans-serif;  /* Police plus moderne */
+  font-weight: 700;
+  color: #333; /* Couleur plus douce que le noir pur */
+  letter-spacing: 1px;
+}
+
+p.lead {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #555;  /* Gris plus doux */
+}
+
+.text-muted {
+  color: #6c757d !important;  /* Un peu plus clair pour la lisibilité */
+}
