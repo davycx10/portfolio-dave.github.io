@@ -8,3 +8,41 @@
   --bs-btn-active-border-color: #89A7B1 !important;
   --bs-btn-active-color: #fff !important;
 }
+
+
+/* Ajout de l'ombre et effet de survol pour les cartes */
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important; /* Transition pour une animation fluide */
+}
+
+/* Effet de survol */
+.card:hover {
+  transform: scale(1.05) !important; /* Agrandissement léger de la carte au survol */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important; /* Ombre douce autour de la carte */
+}
+
+/* Ombre initiale pour les cartes, avant le survol */
+.card {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important; /* Ombre discrète pour l'effet de profondeur */
+}
+
+/* Si tu veux personnaliser l'ombre lors du survol d'une carte spécifique, tu peux ajouter des classes spécifiques */
+.card-body {
+  transition: all 0.3s ease !important; /* Transition sur le contenu */
+}
+
+.card:hover .card-body {
+  /* Optionnel : on peut ajuster les effets à l'intérieur de la carte aussi */
+  background-color: rgba(0, 0, 0, 0.03) !important; /* Changer la couleur de fond au survol si besoin */
+}
+
+
+/* transiton pour les boutons */
+.btn-outline-primary {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transition fluide pour le mouvement et l'ombre */
+}
+
+.btn-outline-primary:active {
+  transform: translateY(2px) !important; /* Légère pression du bouton */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au clic */
+}
