@@ -1,0 +1,246 @@
+/* Personnalisation du CV */
+#contact-section {
+  background-color: #f4f4f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+#name {
+  color: #333;
+  font-size: 2.5rem;
+}
+
+#job-title {
+  color: #4b4b4b;
+  font-size: 1.25rem;
+}
+
+#profile-description {
+  color: #666;
+}
+
+#contact-details p {
+  margin-bottom: 10px;
+}
+
+#contact-phone, #contact-email, #contact-linkedin {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#contact-phone:hover, #contact-email:hover, #contact-linkedin:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Animation de survol sur les sections principales */
+#profile-section,
+#experience-section,
+#skills-section,
+#projects-section,
+#languages-section,
+#interests-section,
+#education-section {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#profile-section:hover,
+#experience-section:hover,
+#skills-section:hover,
+#projects-section:hover,
+#languages-section:hover,
+#interests-section:hover,
+#education-section:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Effet de survol sur les éléments de liste (projets, compétences, etc.) */
+#skills-section li,
+#projects-section div,
+#languages-section li,
+#interests-section li,
+#experience-section li {
+  transition: transform 0.3s ease;
+}
+
+#skills-section li:hover,
+#projects-section div:hover,
+#languages-section li:hover,
+#interests-section li:hover,
+#experience-section li:hover {
+  transform: translateX(5px); /* Déplace légèrement les éléments vers la droite */
+}
+
+/* Style des titres */
+#profile-title,
+#experience-title,
+#skills-title,
+#projects-title,
+#languages-title,
+#interests-title,
+#education-title {
+  transition: color 0.3s ease;
+}
+
+#profile-title:hover,
+#experience-title:hover,
+#skills-title:hover,
+#projects-title:hover,
+#languages-title:hover,
+#interests-title:hover,
+#education-title:hover {
+  color: #007bff; /* Change la couleur au survol */
+}
+
+/* Effet de survol sur les formations */
+#education-section div:hover {
+  transform: translateX(10px); /* Décale légèrement à droite */
+  transition: transform 0.3s ease;
+}
+
+
+/* Effet de survol sur les formations */
+#education-section div:hover {
+  transform: translateX(10px); /* Décale légèrement à droite */
+  transition: transform 0.3s ease;
+}
+
+
+/* Effet de survol sur les projets */
+#projects-section div:hover {
+  transform: translateX(10px); /* Décale légèrement à droite */
+  transition: transform 0.3s ease;
+}
+
+/* ---------------- Responsive ---------------- */
+
+/* Sur petits écrans : Ajuster les sections pour s'adapter à la largeur de l'écran */
+@media (max-width: 768px) {
+  /* Mise en page en une seule colonne */
+  #contact-section, #profile-section, #experience-section, #skills-section, #projects-section, #languages-section, #interests-section {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  /* Titre du CV plus petit sur mobile */
+  #name {
+    font-size: 2rem;
+  }
+
+  #job-title {
+    font-size: 1rem;
+  }
+
+  #contact-details p {
+    font-size: 0.9rem;
+  }
+
+  /* Ajuster les colonnes pour qu'elles soient en une seule colonne sur mobile */
+  #skills-row {
+    flex-direction: column;
+  }
+
+  /* Adapter les espaces dans les sections */
+  #experience-section ul, #skills-section ul {
+    padding-left: 20px;
+  }
+
+  #skills-section li,
+  #projects-section div,
+  #languages-section li,
+  #interests-section li {
+    font-size: 0.9rem;
+  }
+
+  /* Rendre les éléments du projet plus petits */
+  #projects-section div {
+    font-size: 0.9rem;
+  }
+
+  /* Réduire la taille des titres dans les projets */
+  #projects-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* Sur très petits écrans (smartphones portrait) */
+@media (max-width: 480px) {
+  /* Ajuster la taille des titres */
+  #name {
+    font-size: 1.8rem;
+  }
+
+  #job-title {
+    font-size: 0.9rem;
+  }
+
+  /* Réduire l'espacement dans les sections */
+  #contact-section, #profile-section, #experience-section, #skills-section, #projects-section, #languages-section, #interests-section {
+    padding: 10px;
+  }
+
+  #contact-phone, #contact-email, #contact-linkedin {
+    font-size: 0.8rem;
+  }
+
+  /* Changer l'alignement des titres */
+  #profile-title, #experience-title, #skills-title, #projects-title, #languages-title, #interests-title {
+    font-size: 1.1rem;
+  }
+
+  /* Ajuster les listes */
+  #skills-section li, #projects-section div, #languages-section li, #interests-section li {
+    font-size: 0.8rem;
+  }
+
+  /* Espacement entre les sections plus réduit */
+  #skills-section, #projects-section, #languages-section, #interests-section {
+    margin-top: 10px;
+  }
+}
+
+/* Pour les tablettes en mode paysage (entre 768px et 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Colonnes côte à côte mais plus serrées */
+  #skills-row {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  /* Garder une disposition en deux colonnes pour les sections principales */
+  #contact-section, #profile-section, #experience-section, #skills-section, #projects-section, #languages-section, #interests-section {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* Agrandir légèrement les éléments de liste */
+  #skills-section li,
+  #projects-section div,
+  #languages-section li,
+  #interests-section li {
+    font-size: 1rem;
+  }
+
+  /* Réduire la taille des titres dans les projets */
+  #projects-section div {
+    font-size: 1rem;
+  }
+
+  /* Adapter la taille des éléments du CV */
+  #name {
+    font-size: 2.2rem;
+  }
+
+  #job-title {
+    font-size: 1.2rem;
+  }
+}

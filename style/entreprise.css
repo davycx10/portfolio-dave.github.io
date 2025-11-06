@@ -1,0 +1,113 @@
+/* Section globale */
+.experience-section {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.5s ease;
+}
+
+/* Container flex gauche/droite */
+.experience-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  transition: all 0.5s ease;
+}
+
+/* Partie gauche : logo */
+.experience-left {
+  flex: 0 0 220px; /* augmenté */
+  text-align: center;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.experience-logo {
+  width: 250px; /* avant 160px */
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+.experience-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Partie droite : texte */
+.experience-right {
+  flex: 1 1 auto;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Titres */
+.experience-right h1 {
+  margin: 0;
+  font-size: 2.8rem; /* avant 2.4rem */
+  color: #111;
+  transition: color 0.5s ease;
+}
+.role {
+  margin-top: 8px;
+  font-size: 1.4rem; /* avant 1.2rem */
+  color: #666;
+  font-style: italic;
+  transition: color 0.5s ease;
+}
+
+/* Paragraphes */
+.experience-content p {
+  line-height: 1.8; /* ajusté */
+  font-size: 1.1rem; /* avant 1rem */
+  margin-bottom: 24px;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.experience-content p:hover {
+  transform: translateY(-2px);
+}
+
+/* Badges tech */
+.experience-tech {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px; /* un peu plus d’espace */
+  transition: all 0.5s ease;
+}
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* icônes plus espacées */
+  background: linear-gradient(90deg, #0072ff, #00c6ff);
+  color: #fff;
+  padding: 12px 18px; /* avant 10px 16px */
+  border-radius: 24px;
+  font-size: 1rem; /* avant 0.95rem */
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+.tech-badge i {
+  font-size: 1.3rem; /* avant 1.1rem */
+}
+.tech-badge:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .experience-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .experience-right {
+    text-align: center;
+  }
+  .experience-left {
+    flex: 0 0 auto;
+  }
+}

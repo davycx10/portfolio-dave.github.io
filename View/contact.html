@@ -1,14 +1,14 @@
-<!-- SECTION : Formulaire de contact -->
-<section data-aos="fade-up" data-aos-delay="200" id="contact" class="py-5 ">
-  <di class="container">
+<!-- SECTION : Formulaire de Contact -->
+<section data-aos="fade-up" data-aos-delay="200" id="contact" class="contact-section py-5">
+  <div class="container">
     <h2 class="text-center mb-4">Contactez-moi</h2>
     <p class="text-center text-muted mb-5">Une opportunité ? Une question ? N'hésitez pas à m'écrire !</p>
 
     <!-- Formulaire Formspree -->
-    <form action="https://formspree.io/f/xjkagvdy" method="POST" class="mx-auto" style="max-width: 600px;">
+    <form action="https://formspree.io/f/xjkagvdy" method="POST" class="mx-auto contact-form" style="max-width: 600px;">
       <div class="mb-3">
         <label for="name" class="form-label">Nom et Prénom </label>
-        <input type="text" name="name" class="form-control" id="name" placeholder="Votre nom et prénom" required>
+        <input style="font-size: medium;" name="name" class="form-control" id="name" placeholder="Votre nom et prénom" required>
       </div>
 
       <div class="mb-3">
@@ -22,13 +22,13 @@
       </div>
 
       <div class="mb-3">
-        <label for="subject" class="form-label">Entreprise</label>
-        <input type="text" name="subject" class="form-control" id="subject" placeholder="Le nom de votre entreprise...">
+        <label for="company" class="form-label">Entreprise</label>
+        <input type="text" name="subject" class="form-control" id="company" placeholder="Le nom de votre entreprise...">
       </div>
 
       <div class="mb-3">
         <label for="subject" class="form-label">Sujet</label>
-        <input type="text" name="subject" class="form-control" id="subject" placeholder="Proposition d'alternace/CDI/CDD, Entretien ...">
+        <input type="text" name="subject" class="form-control" id="subject" placeholder="Proposition d'alternance/CDI/CDD, Entretien ...">
       </div>
 
       <div class="mb-3">
@@ -44,35 +44,7 @@
         Merci pour votre message ! Je vous répondrai dès que possible.
       </div>
 
-      <button style="background-color: #89A7B1;" type="submit" class="btn btn-primary w-100">Envoyer</button>
+      <button style="background-color: #89A7B1;" type="submit" class="btn btn-primary w-100 submit-btn">Envoyer</button>
     </form>
   </div>
 </section>
-
-
-
-<!-- Script de confirmation après envoi -->
-<script>
-  const form = document.querySelector("form");
-  const confirmation = document.getElementById("confirmation");
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-    
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: formData,
-      headers: {
-        'Accept': 'application/json'
-      }
-    });
-
-    if (response.ok) {
-      form.reset();
-      confirmation.classList.remove("d-none");
-    } else {
-      alert("Une erreur s'est produite. Veuillez réessayer.");
-    }
-  });
-</script>
