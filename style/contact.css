@@ -1,0 +1,145 @@
+/* -------------------- Section Contact -------------------- */
+.contact-section {
+  background-color: #f9f9f9;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  position: relative;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.contact-section h2:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+.contact-section p {
+  font-size: 1rem;
+  color: #777;
+}
+
+.contact-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form .form-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-form .form-control {
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.contact-form .form-control::placeholder {
+  color: #999;
+}
+
+/* -------------------- Animation & Transitions -------------------- */
+
+/* Fade-in effect for the form */
+.contact-form {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+/* Stagger the fade-in of the form fields */
+.contact-form input, .contact-form textarea, .contact-form button {
+  animation: fadeInUp 0.8s ease-in-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.contact-form input:nth-child(1), .contact-form textarea:nth-child(6) {
+  animation-delay: 0.2s;
+}
+
+.contact-form input:nth-child(2), .contact-form input:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.contact-form textarea {
+  animation-delay: 0.6s;
+}
+
+.contact-form button {
+  animation-delay: 0.8s;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------------- Animation de survol du bouton -------------------- */
+.submit-btn {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3; /* Change background color on hover */
+  transform: scale(1.05); /* Slightly scale up the button on hover */
+}
+
+/* -------------------- Responsive Design -------------------- */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 30px 15px;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-form .form-control {
+    font-size: 0.9rem;
+  }
+
+  .contact-form .btn {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form .form-control {
+    font-size: 0.8rem;
+  }
+
+  .contact-form .btn {
+    font-size: 0.9rem;
+  }
+
+  .contact-form {
+    padding: 15px;
+  }
+
+  .contact-section h2 {
+    font-size: 1.5rem;
+  }
+}
