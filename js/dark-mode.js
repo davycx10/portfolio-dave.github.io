@@ -1,29 +1,37 @@
+// Toujours appliquer le thème dès le chargement de la page
+(function applySavedTheme() {
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+  } else {
+    document.body.classList.remove("dark-mode");
+  }
+})();
+
 function initDarkMode() {
   const toggleBtn = document.getElementById("theme-toggle");
   if (!toggleBtn) return;
+
+  // Mettre l’icône correcte selon le thème actuel
+  if (document.body.classList.contains("dark-mode")) {
+    toggleBtn.textContent = "☀️";
+  } else {
+    toggleBtn.textContent = "🌙";
+  }
 
   toggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
 
     if (document.body.classList.contains("dark-mode")) {
       toggleBtn.textContent = "☀️";
-      showNotification("Mode sombre activé 🌙");
+      localStorage.setItem("theme", "dark"); // sauvegarde
     } else {
       toggleBtn.textContent = "🌙";
-      showNotification("Mode clair activé ☀️");
+      localStorage.setItem("theme", "light"); // sauvegarde
     }
   });
 }
 
-function showNotification(message) {
-  const notif = document.createElement("div");
-  notif.textContent = message;
-  notif.className = "theme-notification";
-  document.body.appendChild(notif);
-  setTimeout(() => notif.remove(), 2000);
-}
-
-// ⚡ On attend que le header soit chargé
 function loadHTML(url, targetId, callback) {
   fetch(url)
     .then(res => {
@@ -39,6 +47,6 @@ function loadHTML(url, targetId, callback) {
     });
 }
 
-// Exemple d’utilisation dans ton index.js
+// Exemple d’utilisation
 loadHTML("View/commun/header.html", "header", initDarkMode);
 loadHTML("View/commun/footer.html", "footer");
