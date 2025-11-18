@@ -1,3 +1,4 @@
+/* ---------------- Boutons ---------------- */
 .btn-outline-primary {
   --bs-btn-color: #89A7B1 !important;
   --bs-btn-border-color: #89A7B1 !important;
@@ -7,42 +8,91 @@
   --bs-btn-active-bg: #89A7B1 !important;
   --bs-btn-active-border-color: #89A7B1 !important;
   --bs-btn-active-color: #fff !important;
-}
 
-
-/* Ajout de l'ombre et effet de survol pour les cartes */
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important; /* Transition pour une animation fluide */
-}
-
-/* Effet de survol */
-.card:hover {
-  transform: scale(1.05) !important; /* Agrandissement léger de la carte au survol */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important; /* Ombre douce autour de la carte */
-}
-
-/* Ombre initiale pour les cartes, avant le survol */
-.card {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important; /* Ombre discrète pour l'effet de profondeur */
-}
-
-/* Si tu veux personnaliser l'ombre lors du survol d'une carte spécifique, tu peux ajouter des classes spécifiques */
-.card-body {
-  transition: all 0.3s ease !important; /* Transition sur le contenu */
-}
-
-.card:hover .card-body {
-  /* Optionnel : on peut ajuster les effets à l'intérieur de la carte aussi */
-  background-color: rgba(0, 0, 0, 0.03) !important; /* Changer la couleur de fond au survol si besoin */
-}
-
-
-/* transiton pour les boutons */
-.btn-outline-primary {
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Transition fluide pour le mouvement et l'ombre */
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .btn-outline-primary:active {
-  transform: translateY(2px) !important; /* Légère pression du bouton */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au clic */
+  transform: translateY(2px) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------------- Cartes ---------------- */
+.card {
+  background: linear-gradient(135deg, #ffffff, #f7f9fb); /* léger dégradé moderne */
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  overflow: hidden;
+}
+
+/* Hover léger (pas trop marqué) */
+.card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12) !important;
+}
+
+/* Corps de carte */
+.card-body {
+  padding: 20px;
+  transition: background-color 0.3s ease !important;
+}
+
+/* Optionnel : un peu de couleur subtile au hover */
+.card:hover .card-body {
+  background-color: rgba(137, 167, 177, 0.05) !important;
+}
+
+/* ---------------- Titres dans les cartes ---------------- */
+.card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 12px;
+  border-left: 4px solid #89A7B1;
+  padding-left: 8px;
+}
+
+/* ---------------- Texte ---------------- */
+.card-text {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ---------------- MODE SOMBRE ---------------- */
+body.dark-mode .card {
+  background: linear-gradient(135deg, #1e1e1e, #2b2b2b);
+  box-shadow: 0 2px 6px rgba(255,255,255,0.05) !important;
+}
+
+body.dark-mode .card:hover {
+  box-shadow: 0 6px 16px rgba(255,255,255,0.1) !important;
+}
+
+body.dark-mode .card-body {
+  background-color: transparent;
+}
+
+body.dark-mode .card:hover .card-body {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+body.dark-mode .card-title {
+  color: #f1f1f1;
+  border-left: 4px solid #66b2ff;
+}
+
+body.dark-mode .card-text {
+  color: #dddddd;
+}
+
+body.dark-mode .btn-outline-primary {
+  --bs-btn-color: #66b2ff !important;
+  --bs-btn-border-color: #66b2ff !important;
+  --bs-btn-hover-bg: #66b2ff !important;
+  --bs-btn-hover-border-color: #66b2ff !important;
+  --bs-btn-hover-color: #1e1e1e !important;
+  --bs-btn-active-bg: #66b2ff !important;
+  --bs-btn-active-border-color: #66b2ff !important;
+  --bs-btn-active-color: #1e1e1e !important;
 }

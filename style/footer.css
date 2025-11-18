@@ -1,13 +1,23 @@
+/* Footer classique (toujours sombre) */
 footer {
-  padding: 25px 0;
-  margin-top: 30px; 
-  /* padding-top: 1rem; */
+  background: #2b2b2b;
+  color: #f1f1f1;
+  padding: 30px 0;
+  text-align: center;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
 }
 
+/* Liens */
 footer a {
+  color: #00c6ff;
   text-decoration: none;
 }
-
 footer a:hover {
+  color: #89A7B1;
   text-decoration: underline;
+}
+
+/* Mode sombre : contraste léger */
+body.dark-mode footer {
+  background: #1e1e1e;
 }

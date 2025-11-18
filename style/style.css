@@ -1,47 +1,140 @@
-/* Appliquer flexbox sur le body pour aligner le contenu verticalement */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  /* background-color: #f9f9f9; */
+/* =========================
+   Mode clair par défaut
+   ========================= */
+body {
+  background: #f9f9f9;
+  color: #333;
 }
 
-/* Main prend toute la hauteur restante entre le header et le footer */
-main {
-  flex: 1;
-  /* padding-top: 2rem; */
-  background-color: #f9f9f9;
+/* =========================
+   Mode sombre global
+   ========================= */
+body.dark-mode {
+  background: #1e1e1e;
+  color: #e4e4e4;
 }
 
-/* Footer peut être stylisé comme tu veux, mais il reste en bas */
-/* footer {
-  background-color: #f8f9fa;
-  padding: 1rem;
-  text-align: center;
-} */
-
-
-  /* Supprimer le scroll horizontal */
-  body {
-    overflow-x: hidden;
-  }
-
-
-  h1.display-5 {
-  font-family: 'Poppins', sans-serif;  /* Police plus moderne */
-  font-weight: 700;
-  color: #333; /* Couleur plus douce que le noir pur */
-  letter-spacing: 1px;
+/* Liens */
+body.dark-mode a {
+  color: #66b2ff;
+}
+body.dark-mode a:hover {
+  color: #99ccff;
 }
 
-p.lead {
+/* =========================
+   Bootstrap overrides
+   ========================= */
+
+/* Navbar */
+body.dark-mode .navbar {
+  background-color: #2c2c2c !important;
+}
+body.dark-mode .navbar .nav-link {
+  color: #e4e4e4 !important;
+}
+body.dark-mode .navbar .nav-link:hover {
+  color: #66b2ff !important;
+}
+
+/* Cards */
+body.dark-mode .card {
+  background-color: #2a2a2a;
+  color: #e4e4e4;
+  border: 1px solid #444;
+}
+body.dark-mode .card .card-header {
+  background-color: #333;
+  color: #e4e4e4;
+}
+
+/* Buttons */
+body.dark-mode .btn {
+  border: none;
+}
+body.dark-mode .btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+body.dark-mode .btn-secondary {
+  background-color: #444;
+  color: #e4e4e4;
+}
+body.dark-mode .btn-light {
+  background-color: #555;
+  color: #e4e4e4;
+}
+
+/* Tables */
+body.dark-mode .table {
+  background-color: #2a2a2a;
+  color: #e4e4e4;
+}
+body.dark-mode .table th,
+body.dark-mode .table td {
+  border-color: #444;
+}
+
+/* Forms */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: #2a2a2a;
+  color: #e4e4e4;
+  border: 1px solid #555;
+}
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+  color: #aaa;
+}
+
+/* Alerts */
+body.dark-mode .alert {
+  background-color: #333;
+  color: #e4e4e4;
+  border: 1px solid #555;
+}
+
+/* =========================
+   Bouton toggle
+   ========================= */
+#theme-toggle {
+  border: none;
+  background: #89A7B1;
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
   font-size: 1.2rem;
-  line-height: 1.7;
-  color: #555;  /* Gris plus doux */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+#theme-toggle:hover {
+  background: #007bff;
+  transform: translateY(-2px);
 }
 
-.text-muted {
-  color: #6c757d !important;  /* Un peu plus clair pour la lisibilité */
+/* =========================
+   Notification flottante
+   ========================= */
+#theme-notification {
+  visibility: hidden;
+  min-width: 220px;
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 12px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+#theme-notification.show {
+  visibility: visible;
+  opacity: 1;
 }

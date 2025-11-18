@@ -1,10 +1,9 @@
 /* Section globale */
 .experience-section {
   padding: 80px 20px;
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, #fdfdfd, #f3f3f3);
   color: #333;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  transition: all 0.5s ease;
 }
 
 /* Container flex gauche/droite */
@@ -15,56 +14,49 @@
   max-width: 1200px;
   margin: 0 auto;
   flex-wrap: wrap;
-  transition: all 0.5s ease;
 }
 
 /* Partie gauche : logo */
 .experience-left {
-  flex: 0 0 220px; /* augmenté */
+  flex: 0 0 220px;
   text-align: center;
-  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 .experience-logo {
-  width: 250px; /* avant 160px */
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  width: 240px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 .experience-logo:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transform: scale(1.08);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
 }
 
 /* Partie droite : texte */
 .experience-right {
   flex: 1 1 auto;
-  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 /* Titres */
 .experience-right h1 {
   margin: 0;
-  font-size: 2.8rem; /* avant 2.4rem */
+  font-size: 2.6rem;
+  font-weight: 700;
   color: #111;
-  transition: color 0.5s ease;
 }
 .role {
-  margin-top: 8px;
-  font-size: 1.4rem; /* avant 1.2rem */
-  color: #666;
+  margin-top: 10px;
+  font-size: 1.3rem;
+  color: #555;
   font-style: italic;
-  transition: color 0.5s ease;
 }
 
 /* Paragraphes */
 .experience-content p {
-  line-height: 1.8; /* ajusté */
-  font-size: 1.1rem; /* avant 1rem */
+  line-height: 1.8;
+  font-size: 1.1rem;
   margin-bottom: 24px;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-.experience-content p:hover {
-  transform: translateY(-2px);
+  color: #444;
 }
 
 /* Badges tech */
@@ -72,28 +64,27 @@
   margin-top: 40px;
   display: flex;
   flex-wrap: wrap;
-  gap: 14px; /* un peu plus d’espace */
-  transition: all 0.5s ease;
+  gap: 14px;
 }
 .tech-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px; /* icônes plus espacées */
+  gap: 8px;
   background: linear-gradient(90deg, #0072ff, #00c6ff);
   color: #fff;
-  padding: 12px 18px; /* avant 10px 16px */
-  border-radius: 24px;
-  font-size: 1rem; /* avant 0.95rem */
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
 }
 .tech-badge i {
-  font-size: 1.3rem; /* avant 1.1rem */
+  font-size: 1.3rem;
 }
 .tech-badge:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
   background: linear-gradient(90deg, #00c6ff, #0072ff);
 }
 
@@ -102,7 +93,7 @@
   .experience-container {
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
   }
   .experience-right {
     text-align: center;
@@ -110,4 +101,31 @@
   .experience-left {
     flex: 0 0 auto;
   }
+}
+
+/* ---------------- MODE SOMBRE ---------------- */
+body.dark-mode .experience-section {
+  background: linear-gradient(135deg, #1e1e1e, #2b2b2b);
+  color: #e4e4e4;
+}
+
+body.dark-mode .experience-right h1 {
+  color: #f1f1f1;
+}
+
+body.dark-mode .role {
+  color: #cccccc;
+}
+
+body.dark-mode .experience-content p {
+  color: #dddddd;
+}
+
+body.dark-mode .tech-badge {
+  background: linear-gradient(90deg, #444, #666);
+  color: #fff;
+}
+body.dark-mode .tech-badge:hover {
+  background: linear-gradient(90deg, #666, #444);
+  box-shadow: 0 10px 28px rgba(255,255,255,0.15);
 }
