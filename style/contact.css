@@ -58,15 +58,12 @@
 }
 
 /* -------------------- Animation & Transitions -------------------- */
-
-/* Fade-in effect for the form */
 .contact-form {
   opacity: 0;
   transform: translateY(30px);
   animation: fadeInUp 0.8s ease-in-out forwards;
 }
 
-/* Stagger the fade-in of the form fields */
 .contact-form input, .contact-form textarea, .contact-form button {
   animation: fadeInUp 0.8s ease-in-out forwards;
   opacity: 0;
@@ -89,7 +86,6 @@
   animation-delay: 0.8s;
 }
 
-/* Fade-in animation */
 @keyframes fadeInUp {
   to {
     opacity: 1;
@@ -103,8 +99,8 @@
 }
 
 .submit-btn:hover {
-  background-color: #0056b3; /* Change background color on hover */
-  transform: scale(1.05); /* Slightly scale up the button on hover */
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
 /* -------------------- Responsive Design -------------------- */
@@ -142,4 +138,49 @@
   .contact-section h2 {
     font-size: 1.5rem;
   }
+}
+
+/* -------------------- MODE SOMBRE -------------------- */
+body.dark-mode .contact-section {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .contact-section h2 {
+  color: #f1f1f1;
+}
+
+body.dark-mode .contact-section h2:hover {
+  color: #66b2ff;
+}
+
+body.dark-mode .contact-section p {
+  color: #cccccc;
+}
+
+body.dark-mode .contact-form {
+  background-color: #2b2b2b;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .contact-form .form-label {
+  color: #f1f1f1;
+}
+
+body.dark-mode .contact-form .form-control {
+  background-color: #1e1e1e;
+  border: 1px solid #555;
+  color: #e4e4e4;
+}
+
+body.dark-mode .contact-form .form-control::placeholder {
+  color: #aaaaaa;
+}
+
+body.dark-mode .submit-btn {
+  background-color: #3399ff;
+  color: #fff;
+}
+
+body.dark-mode .submit-btn:hover {
+  background-color: #1a73e8;
 }
