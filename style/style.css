@@ -117,24 +117,3 @@ body.dark-mode .alert {
 /* =========================
    Notification flottante
    ========================= */
-#theme-notification {
-  visibility: hidden;
-  min-width: 220px;
-  background-color: #007bff;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 12px;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 9999;
-  font-size: 0.95rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-#theme-notification.show {
-  visibility: visible;
-  opacity: 1;
-}
