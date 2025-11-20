@@ -10,7 +10,7 @@
   <section class="mb-5">
     <div class="row g-4 align-items-center">
       <div class="col-lg-6" data-aos="fade-right">
-        <h2 class="fw-semibold mb-3">⚡ Qu'est-ce que le Ray Tracing ?</h2>
+        <h2 class="fw-semibold mb-3"> Qu'est-ce que le Ray Tracing ?</h2>
         <p>
           Le Ray Tracing est une technologie de rendu qui simule le comportement réel de la lumière pour produire des effets visuels ultra-réalistes (reflets, ombres, lumière).
           D'abord utilisé dans le cinéma, il est aujourd’hui intégré dans les moteurs de jeu grâce aux cartes graphiques comme les <strong>NVIDIA RTX</strong> ou <strong>AMD RDNA 2+</strong>.
@@ -27,15 +27,25 @@
             </iframe>
         </div>
 
-        <div>
-            <iframe 
-                width="560" height="315" 
-                src="https://www.youtube.com/embed/9b2eZYuORYM?si=HPit4PBxj5XVxCQm" 
-                title="YouTube video player" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-            </iframe>
-        </div>
+<div style="display: flex; gap: 20px; justify-content: center;">
+    <iframe 
+        width="560" height="315" 
+        src="https://www.youtube.com/embed/9b2eZYuORYM?si=HPit4PBxj5XVxCQm" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+
+    <iframe 
+        width="560" height="315" 
+        src="https://www.youtube.com/embed/Tk7Zbzd-6fs?si=U_NIrHGWWrIxw3rg" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+</div>
+
+
     </div>
   </section>
 
@@ -70,48 +80,27 @@
     </ul>
   </section>
 
-  <!-- 🎯 Veille dynamique via API NewsAPI -->
-  <!-- <section class="mb-5">
-    <h2 class="fw-semibold mb-4">
-      <i class="bi bi-newspaper me-2"></i> Actualités récentes sur le Ray Tracing
-    </h2>
-    <div class="row" id="news-container"> -->
-      <!-- Articles dynamiques ajoutés ici -->
-    <!-- </div>
-  </section> -->
+  <!--  Veille dynamique via API NewsAPI -->
+<section class="mb-5">
+  <h2 class="fw-semibold mb-4">
+    <i class="bi bi-newspaper me-2"></i> Actualités récentes sur le Ray Tracing
+  </h2>
+  <div class="row">
+    <!-- Widget Elfsight -->
+    <!-- Elfsight RSS Feed | Untitled RSS Feed -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-98f95608-0d0d-44cf-9ddd-eb8543e0e8a3" data-elfsight-app-lazy></div>
+  </div>
+</section>
 
-  <!-- Script rss2json -->
-  <!-- <script 
-  src=" https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.google.fr%2Falerts%2Ffeeds%2F01480994251274701474%2F16639576457401879240">
-</script>
 
-  <script>
-    function showFeed(data) {
-      const container = document.getElementById("news-container");
 
-      if (!data.items || data.items.length === 0) {
-        container.innerHTML = "<p>Aucune actualité trouvée.</p>";
-        return;
-      }
 
-      data.items.forEach(item => {
-        const article = document.createElement("div");
-        article.className = "col-12 mb-3";
-        article.innerHTML = `
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">
-                <a href="${item.link}" target="_blank">${item.title}</a>
-              </h5>
-              <p class="card-text">${item.description || ""}</p>
-              <small class="text-muted">${new Date(item.pubDate).toLocaleDateString()}</small>
-            </div>
-          </div>
-        `;
-        container.appendChild(article);
-      });
-    }
-  </script> -->
+
+
+
+
+
 
     <!-- <section class="mb-5"> -->
       <!-- <h2 class="fw-semibold mb-4" data-aos="fade-up"> -->
@@ -129,23 +118,24 @@
 
   
 
-  <!-- 🧰 Outils de veille utilisés -->
+  <!--  Outils de veille utilisés -->
   <section class="mb-5">
     <h2 class="fw-semibold mb-4" data-aos="fade-up"><i class="bi bi-tools me-2"></i> Outils que j’utilise pour ma veille</h2>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">📰 <strong>Feedly</strong> — Pour suivre les blogs et sites tech</li>
-      <li class="list-group-item">📺 <strong>YouTube</strong> — Chaînes comme Digital Foundry, Hardware Unboxed</li>
-      <li class="list-group-item">📚 <strong>Docs officielles</strong> — NVIDIA Developer, Unreal Engine, AMD GPUOpen</li>
-      <!-- <li class="list-group-item">📡 <strong>rss.app</strong> — Pour intégrer dynamiquement les dernières actualités</li> -->
+      <li class="list-group-item"> <strong>Feedly</strong> — Pour suivre les blogs et sites tech</li>
+      <li class="list-group-item"> <strong>YouTube</strong> — Chaînes comme Digital Foundry, Hardware Unboxed</li>
+      <li class="list-group-item"> <strong>Docs officielles</strong> — NVIDIA Developer, Unreal Engine, AMD GPUOpen</li>
+      <!-- <li class="list-group-item"> <strong>rss.app</strong> — Pour intégrer dynamiquement les dernières actualités</li> -->
     </ul>
   </section>
 
-  <!-- 🧠 Conclusion -->
+  <!--  Conclusion -->
   <section class="mb-5">
     <div class="bg-white border p-4 rounded shadow-sm" data-aos="fade-up">
       <h3 class="mb-3"> Conclusion</h3>
       <p>
-        Le Ray Tracing me bluffe à chaque fois. C’est fou de voir à quel point ça change l’ambiance et la crédibilité d’une scèneLe Ray Tracing continue de redéfinir les standards visuels du jeu vidéo. Grâce à une veille technologique active, je reste informé des dernières avancées dans ce domaine et dans l’univers du développement graphique en général.
+        Le Ray Tracing révolutionne le rendu visuel en apportant un réalisme 
+        et une profondeur inédits aux scènes de jeu.       
       </p>
     </div>
   </section>
