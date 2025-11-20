@@ -81,47 +81,26 @@
   </section>
 
   <!--  Veille dynamique via API NewsAPI -->
-  <!-- <section class="mb-5">
-    <h2 class="fw-semibold mb-4">
-      <i class="bi bi-newspaper me-2"></i> Actualités récentes sur le Ray Tracing
-    </h2>
-    <div class="row" id="news-container"> -->
-      <!-- Articles dynamiques ajoutés ici -->
-    <!-- </div>
-  </section> -->
+<section class="mb-5">
+  <h2 class="fw-semibold mb-4">
+    <i class="bi bi-newspaper me-2"></i> Actualités récentes sur le Ray Tracing
+  </h2>
+  <div class="row">
+    <!-- Widget Elfsight -->
+    <!-- Elfsight RSS Feed | Untitled RSS Feed -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-98f95608-0d0d-44cf-9ddd-eb8543e0e8a3" data-elfsight-app-lazy></div>
+  </div>
+</section>
 
-  <!-- Script rss2json -->
-  <!-- <script 
-  src=" https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.google.fr%2Falerts%2Ffeeds%2F01480994251274701474%2F16639576457401879240">
-</script>
 
-  <script>
-    function showFeed(data) {
-      const container = document.getElementById("news-container");
 
-      if (!data.items || data.items.length === 0) {
-        container.innerHTML = "<p>Aucune actualité trouvée.</p>";
-        return;
-      }
 
-      data.items.forEach(item => {
-        const article = document.createElement("div");
-        article.className = "col-12 mb-3";
-        article.innerHTML = `
-          <div class="card shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title">
-                <a href="${item.link}" target="_blank">${item.title}</a>
-              </h5>
-              <p class="card-text">${item.description || ""}</p>
-              <small class="text-muted">${new Date(item.pubDate).toLocaleDateString()}</small>
-            </div>
-          </div>
-        `;
-        container.appendChild(article);
-      });
-    }
-  </script> -->
+
+
+
+
+
 
     <!-- <section class="mb-5"> -->
       <!-- <h2 class="fw-semibold mb-4" data-aos="fade-up"> -->
