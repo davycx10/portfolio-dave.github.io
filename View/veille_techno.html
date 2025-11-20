@@ -86,12 +86,21 @@
     <i class="bi bi-newspaper me-2"></i> Actualités récentes sur le Ray Tracing
   </h2>
   <div class="row">
-    <!-- Widget Elfsight -->
-    <!-- Elfsight RSS Feed | Untitled RSS Feed -->
-    <script src="https://elfsightcdn.com/platform.js" async></script>
-    <div class="elfsight-app-98f95608-0d0d-44cf-9ddd-eb8543e0e8a3" data-elfsight-app-lazy></div>
+    <!-- Widget Elfsight en iframe -->
+    <iframe 
+      id="elfsight-rss"
+      src="https://98f956080d0d44cf9dddeb8543e0e8a3.elf.site"
+      style="border:none;width:100%;min-height:600px;">
+    </iframe>
   </div>
 </section>
+
+<!-- Librairie iframe-resizer -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer.min.js"></script>
+<script>
+  iFrameResize({}, '#elfsight-rss');
+</script>
+
 
 
 
