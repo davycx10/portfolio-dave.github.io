@@ -1,3 +1,19 @@
+/* css for main and footer 
+-------------------------------
+------------------------------
+*/
+html, body {
+  overflow-x: hidden; /* bloque le scroll horizontal */
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+
+
 /* =========================
    Mode clair par défaut
    ========================= */

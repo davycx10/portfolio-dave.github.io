@@ -29,11 +29,15 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 </head>
-<body>
+<body >
   <!-- Ces div seront remplis automatiquement par le JavaScript -->
+<body class="d-flex flex-column min-vh-100">
   <div id="header"></div>
-  <main id="content"></main>
-  <div id="footer"></div>
+
+  <main id="content" class="flex-grow-1"></main>
+
+  <div id="footer" class="mt-auto"></div>
+</body>
 
   <script>
     // Fonction pour inclure du HTML dans une section (header, footer, content)
@@ -89,7 +93,7 @@
   <!--  Charger AOS JS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-  <!-- ✅Initialiser AOS après que la lib soit chargée -->
+  <!-- Initialiser AOS après que la lib soit chargée -->
   <script>
     AOS.init();
   </script>
