@@ -1,5 +1,9 @@
 
 <div class="container py-5">
+
+<!-- SECTION HEADER/Introduction
+---------------------------------------------------------------------- 
+-->
   <!-- En-tête -->
   <div class="text-center mb-5" data-aos="fade-up">
     <h1 class="display-4 fw-bold"> Veille Technologique</h1>
@@ -9,45 +13,69 @@
   <!-- Présentation -->
   <section class="mb-5">
     <div class="row g-4 align-items-center">
+      <!-- Colonne gauche : définition -->
       <div class="col-lg-6" data-aos="fade-right">
         <h2 class="fw-semibold mb-3"> Qu'est-ce que le Ray Tracing ?</h2>
-        <p>
-          Le Ray Tracing est une technologie de rendu qui simule le comportement réel de la lumière pour produire des effets visuels ultra-réalistes (reflets, ombres, lumière).
-          D'abord utilisé dans le cinéma, il est aujourd’hui intégré dans les moteurs de jeu grâce aux cartes graphiques comme les <strong>NVIDIA RTX</strong> ou <strong>AMD RDNA 2+</strong>.
-        </p>
+          <p>
+            Le Ray Tracing est une technologie de rendu qui simule le comportement réel de la lumière pour produire des effets visuels ultra-réalistes (reflets, ombres, lumière).
+            D'abord utilisé dans le cinéma, il est aujourd’hui intégré dans les moteurs de jeu grâce aux cartes graphiques comme les 
+            <strong>NVIDIA RTX</strong> ou <strong>AMD RDNA 2+</strong>.
+          </p>
       </div>
-        <div class="ratio ratio-16x9 rounded-4 shadow">
-            <iframe 
+
+          <!-- Colonne droite : Intel -->
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="bg-light p-4 rounded shadow-sm">
+          <h3 class="fw-semibold mb-3">Et du côté d’Intel ?</h3>
+            <p>
+              Depuis 2022, <strong>Intel Arc Alchemist</strong> propose aussi des unités dédiées au Ray Tracing matériel. 
+              Avec sa technologie <strong>XeSS</strong> (Xe Super Sampling), Intel offre une alternative à DLSS (NVIDIA) et FSR (AMD), 
+              permettant de profiter du Ray Tracing tout en maintenant de bonnes performances.
+            </p>
+        </div>
+      </div>
+
+      </div>
+
+<!-- SECTION VEILLE VIDEO
+---------------------------------------------------------------------- 
+-->
+      <div class="ratio ratio-16x9 rounded-4 shadow">
+        <iframe 
+          width="560" height="315" 
+          src="https://www.youtube.com/embed/j31ISEd8xRM?si=LAwiXkeXm4lAVIaM" 
+          title="YouTube video player" frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+
+        </iframe>
+      </div>
+
+    <div style="display: flex; gap: 20px; justify-content: center;">
+        <iframe 
             width="560" height="315" 
-            src="https://www.youtube.com/embed/j31ISEd8xRM?si=LAwiXkeXm4lAVIaM" 
+            src="https://www.youtube.com/embed/9b2eZYuORYM?si=HPit4PBxj5XVxCQm" 
             title="YouTube video player" frameborder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
 
-            </iframe>
-        </div>
-
-<div style="display: flex; gap: 20px; justify-content: center;">
-    <iframe 
-        width="560" height="315" 
-        src="https://www.youtube.com/embed/9b2eZYuORYM?si=HPit4PBxj5XVxCQm" 
-        title="YouTube video player" frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-    </iframe>
-
-    <iframe 
-        width="560" height="315" 
-        src="https://www.youtube.com/embed/Tk7Zbzd-6fs?si=U_NIrHGWWrIxw3rg" 
-        title="YouTube video player" frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-    </iframe>
-</div>
+        <iframe 
+            width="560" height="315" 
+            src="https://www.youtube.com/embed/Tk7Zbzd-6fs?si=U_NIrHGWWrIxw3rg" 
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+    </div>
 
 
     </div>
   </section>
+
+  <!-- SECTION AVANTAGES LIMITES
+---------------------------------------------------------------------- 
+-->
 
   <!-- Avantages et limites -->
   <section class="row g-4 mb-5">
@@ -69,6 +97,11 @@
     </div>
   </section>
 
+
+<!-- SECTION TIMELINE
+---------------------------------------------------------------------- 
+-->
+
   <!-- Ligne du temps -->
   <section class="mb-5">
     <h2 class="fw-semibold mb-4" data-aos="fade-up"><i class="bi bi-clock-history me-2"></i> Évolution du Ray Tracing</h2>
@@ -76,15 +109,22 @@
       <li class="list-group-item" data-aos="fade-up"><strong>2018 :</strong> NVIDIA lance les RTX 20xx avec Ray Tracing matériel.</li>
       <li class="list-group-item" data-aos="fade-up"><strong>2020 :</strong> Minecraft RTX montre le Ray Tracing temps réel.</li>
       <li class="list-group-item" data-aos="fade-up"><strong>2022 :</strong> Unreal Engine 5 intègre Lumen pour du RT hybride.</li>
+      <li class="list-group-item" data-aos="fade-up"><strong>2022 :</strong> Intel lance ses GPU Arc Alchemist avec Ray Tracing et XeSS.</li>
       <li class="list-group-item" data-aos="fade-up"><strong>2023-2024 :</strong> DLSS 3.5 avec Ray Reconstruction pour un rendu plus fluide.</li>
+      <li class="list-group-item" data-aos="fade-up"><strong>2025 :</strong> Lancement de DLSS 4 avec Multi Frame Generation et Ray Reconstruction, rendant le Ray Tracing plus fluide et généralisé..</li>
     </ul>
   </section>
 
+
+<!-- SECTION VEILLE DYNAMIQUE
+---------------------------------------------------------------------- 
+-->
   <!--  Veille dynamique via API NewsAPI -->
 <section class="mb-5">
   <h2 class="fw-semibold mb-4">
     <i class="bi bi-newspaper me-2"></i> Actualités récentes sur le Ray Tracing
   </h2>
+
   <div class="row">
     <!-- Widget Elfsight en iframe -->
     <iframe 
@@ -92,40 +132,24 @@
       src="https://98f956080d0d44cf9dddeb8543e0e8a3.elf.site"
       style="border:none;width:100%;min-height:600px;">
     </iframe>
+
   </div>
 </section>
 
 <!-- Librairie iframe-resizer -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer.min.js"></script>
+<script 
+  src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.2.10/iframeResizer.min.js">
+</script>
+
 <script>
   iFrameResize({}, '#elfsight-rss');
 </script>
 
 
 
-
-
-
-
-
-
-
-
-    <!-- <section class="mb-5"> -->
-      <!-- <h2 class="fw-semibold mb-4" data-aos="fade-up"> -->
-        <!-- <i class="bi bi-newspaper me-2"></i> Reddit - Discussions récentes sur le Ray Tracing -->
-      <!-- </h2> -->
-      <!-- <div class="row" id="news-container"> -->
-        <!-- Articles dynamiques ajoutés ici -->
-        <!-- <iframe  -->
-         <!-- width="100%" height="800"  -->
-         <!-- src="https://www.reddit.com/r/nvidia/search.rss?q=ray+tracing&restrict_sr=1" frameborder="0"> -->
-        <!-- </iframe> -->
-    <!--  -->
-      <!-- </div> -->
-    <!-- </section> -->
-
-  
+<!-- SECTION VEILLE UTILISER
+---------------------------------------------------------------------- 
+-->
 
   <!--  Outils de veille utilisés -->
   <section class="mb-5">
@@ -134,7 +158,7 @@
       <li class="list-group-item"> <strong>Feedly</strong> — Pour suivre les blogs et sites tech</li>
       <li class="list-group-item"> <strong>YouTube</strong> — Chaînes comme Digital Foundry, Hardware Unboxed</li>
       <li class="list-group-item"> <strong>Docs officielles</strong> — NVIDIA Developer, Unreal Engine, AMD GPUOpen</li>
-      <!-- <li class="list-group-item"> <strong>rss.app</strong> — Pour intégrer dynamiquement les dernières actualités</li> -->
+      <li class="list-group-item"> <strong>Talkwalker Alerts and Elfsight</strong> — Pour intégrer dynamiquement les dernières actualités</li>
     </ul>
   </section>
 
@@ -148,4 +172,5 @@
       </p>
     </div>
   </section>
+
 </div>
