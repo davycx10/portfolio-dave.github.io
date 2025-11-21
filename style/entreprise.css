@@ -88,6 +88,18 @@
   background: linear-gradient(90deg, #00c6ff, #0072ff);
 }
 
+
+.btn-info.text-dark {
+  transition: all 0.3s ease; /* animation fluide */
+}
+
+.btn-info.text-dark:hover {
+  background-color: #0dcaf0; /* couleur un peu plus claire */
+  transform: scale(1.05);   /* léger zoom */
+  box-shadow: 0 0 10px rgba(0,0,0,0.2); /* petite ombre */
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .experience-container {
