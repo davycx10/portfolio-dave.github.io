@@ -1,9 +1,44 @@
 <div class="container my-5">
 
   <!-- ======================== -->
+  <!-- FILTRE PAR CATÉGORIE     -->
+  <!-- ======================== -->
+  <div class="d-flex flex-wrap gap-2 mb-5 justify-content-center">
+    <button class="btn btn-primary active" onclick="filtrerProjets(this, 'all')"><i class="bi bi-grid-fill me-1"></i> Tous</button>
+    <button class="btn btn-outline-primary" onclick="filtrerProjets(this, 'ecole')"><i class="bi bi-mortarboard-fill me-1"></i> École</button>
+    <button class="btn btn-outline-primary" onclick="filtrerProjets(this, 'entreprise')"><i class="bi bi-building-fill me-1"></i> Entreprise</button>
+    <button class="btn btn-outline-primary" onclick="filtrerProjets(this, 'perso')"><i class="bi bi-person-fill me-1"></i> Personnel</button>
+  </div>
+
+  <script>
+    function filtrerProjets(btnClique, filtre) {
+      btnClique.parentElement.querySelectorAll("button").forEach(function(b) {
+        b.classList.remove("btn-primary", "active");
+        b.classList.add("btn-outline-primary");
+      });
+      btnClique.classList.remove("btn-outline-primary");
+      btnClique.classList.add("btn-primary", "active");
+
+      document.querySelectorAll(".project-card").forEach(function(card) {
+        card.style.display = (filtre === "all" || card.dataset.category === filtre) ? "" : "none";
+      });
+
+      document.querySelectorAll(".bloc-section").forEach(function(bloc) {
+        var visibles = Array.from(bloc.querySelectorAll(".project-card")).some(function(c) {
+          return c.style.display !== "none";
+        });
+        bloc.style.display = visibles ? "" : "none";
+      });
+    }
+  </script>
+
+
+
+  <!-- ======================== -->
   <!-- SECTION : PROJETS PYTHON -->
   <!-- ======================== -->
-  <h2 data-aos="fade-up" data-aos-delay="250" class="mb-4 d-flex align-items-center">
+  <div class="bloc-section" data-section="python">
+<h2 class="mb-4 d-flex align-items-center">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python" style="height: 32px; margin-right: 10px;">
     Projets Python
   </h2>
@@ -11,7 +46,7 @@
 
     <!-- Projet Python 1 -->
 <!-- Projet Python 1 -->
-<div data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000" class="col">
+<div class="col project-card" data-category="perso">
   <div class="card h-100">
     <div class="card-body">
       <h5 class="card-title"> 
@@ -38,7 +73,7 @@
 
     </div>
     
-    <div data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000" class="card-footer bg-transparent">
+    <div class="card-footer bg-transparent">
       <a 
         href="https://github.com/davycx10/mpy-embedded" target="_blank" 
         class="btn btn-outline-primary">Voir sur GitHub
@@ -51,7 +86,7 @@
 </div>
 
 <!-- Projet Python 2 -->
-<div data-aos="flip-left" data-aos-delay="600" data-aos-duration="1000" class="col">
+<div class="col project-card" data-category="perso">
   <div class="card h-100">
     <div class="card-body">
       <h5 class="card-title"> 
@@ -79,7 +114,7 @@
 
     </div>
 
-    <div data-aos="zoom-in-up" data-aos-delay="900" data-aos-duration="1000" class="card-footer bg-transparent">
+    <div class="card-footer bg-transparent">
       
       <a 
         href="https://github.com/davycx10/Student-Budget-Simulator" target="_blank" 
@@ -92,7 +127,7 @@
 
 
 <!-- Projet Python 3 -->
-<div data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000" class="col">
+<div class="col project-card" data-category="perso">
   <div class="card h-100">
     <div class="card-body">
       <h5 class="card-title"> 
@@ -120,7 +155,7 @@
 
     </div>
     
-    <div data-aos="fade-up" data-aos-delay="500" data-aos-duration="1000" class="card-footer bg-transparent">
+    <div class="card-footer bg-transparent">
       
       <a 
         href="https://github.com/davycx10/weather" target="_blank" 
@@ -132,7 +167,7 @@
 </div>
 
 <!-- Projet Python 4 -->
-<div data-aos="flip-up" data-aos-delay="600" data-aos-duration="1000" class="col">
+<div class="col project-card" data-category="entreprise">
   <div class="card h-100">
     <div class="card-body">
       <h5 class="card-title"> 
@@ -165,7 +200,7 @@
       
     </div>
 
-    <div data-aos="zoom-in-up" data-aos-delay="1000" data-aos-duration="1000" class="card-footer bg-transparent">
+    <div class="card-footer bg-transparent">
       
       <a 
         href="https://github.com/davycx10/Student-Budget-Simulator" target="_blank" 
@@ -181,14 +216,16 @@
 
 
   </div>
+</div>
 
   <!-- Séparateur -->
-  <hr class="my-5">
+  <div class="bloc-section" data-section="cpp">
+<hr class="my-5">
 
   <!-- ======================== -->
   <!-- SECTION : PROJETS C++ -->
   <!-- ======================== -->
-  <h2 data-aos="fade-up" data-aos-delay="250" class="mb-4 d-flex align-items-center">
+  <h2 class="mb-4 d-flex align-items-center">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" alt="C++" style="height: 50px; margin-right: 10px;">
     Projets C/C++
   </h2> 
@@ -196,7 +233,7 @@
 
     <!-- Projet C++ 1 -->
 <!-- Projet C++ : Digicode -->
-<div data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1200" class="col">
+<div class="col project-card" data-category="entreprise">
   <div class="card h-100">
     <div class="card-body">
       <h5 class="card-title"> 
@@ -224,7 +261,7 @@
 
     </div>
 
-    <div data-aos="fade-up" data-aos-delay="600" data-aos-duration="1200" class="card-footer bg-transparent">
+    <div class="card-footer bg-transparent">
 
       <a 
         href="https://github.com/davycx10/embedded-digicode-projet" target="_blank" 
@@ -271,16 +308,18 @@
     <!-- projet C++ 4 -->
 
   </div>
+</div>
 
 
 
   <!-- Séparateur -->
-  <hr class="my-5">
+  <div class="bloc-section" data-section="vm">
+<hr class="my-5">
 
   <!-- ======================== -->
   <!-- SECTION : PROJETS VM -->
   <!-- ======================== -->
-  <h2 data-aos="fade-up" data-aos-delay="350" class="mb-4 d-flex align-items-center">
+  <h2 class="mb-4 d-flex align-items-center">
     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vsphere/vsphere-original.svg" alt="C++" style="height: 50px; margin-right: 10px;">
     Projets VM
   </h2> 
@@ -288,7 +327,7 @@
 
     <!-- Projet VM 1 -->
 <!-- Projet VM 1 : Kali Linux -->
-<div data-aos="flip-up" data-aos-delay="300" data-aos-duration="1200" class="col">
+<div class="col project-card" data-category="perso">
   <div class="card h-100">
     <div class="card-body">
       <h5 class="card-title"> 
@@ -320,7 +359,7 @@
 </div>
 
 <!-- Projet VM 2 : Ubuntu -->
-<div data-aos="zoom-in" data-aos-delay="700" data-aos-duration="1200" class="col">
+<div class="col project-card" data-category="perso">
   <div class="card h-100">
     <div class="card-body">
       <h5 class="card-title"> 
@@ -340,7 +379,7 @@
 
     </div>
 
-    <div data-aos="fade-up" data-aos-delay="1000" data-aos-duration="1200" class="card-footer bg-transparent">
+    <div class="card-footer bg-transparent">
       <a 
         href="doc/Installation d’Ubuntu Desktop sur VMware Workstation Pro 17.pdf" target="_blank" 
         class="btn btn-outline-primary">doc personnel pour l'Installation
@@ -352,7 +391,7 @@
 
 
     <!-- Projet VM 3:  GLPI -->
-<div data-aos="flip-up" data-aos-delay="300" data-aos-duration="1200" class="col">
+<div class="col project-card" data-category="ecole">
   <div class="card h-100">
     <div class="card-body">
       <h5 class="card-title"> 
@@ -372,7 +411,7 @@
 
     </div>
 
-    <div data-aos="zoom-in-up" data-aos-delay="600" data-aos-duration="1200" class="card-footer bg-transparent">
+    <div class="card-footer bg-transparent">
       <a 
         href="doc/GLPI/Installation-et-configuration-de-GLPI.pdf" 
         target="_blank" class="btn btn-outline-primary">doc suivie pour la configuration et l'Installation
@@ -386,17 +425,19 @@
     <!-- projet VM 4 -->
 
 </div>
+</div>
 
 
 
 
   <!-- Séparateur -->
-  <hr class="my-5">
+  <div class="bloc-section" data-section="web">
+<hr class="my-5">
 
   <!-- ========================================= -->
   <!-- SECTION : PROJETS HTML / CSS / PHP/ WEB -->
   <!-- ========================================= -->
-  <h2 data-aos="fade-up" data-aos-delay="350" class="mb-4 d-flex align-items-center">
+  <h2 class="mb-4 d-flex align-items-center">
     <img  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/webstorm/webstorm-original.svg"  alt="HTML/CSS/PHP" style="height: 32px; margin-right: 10px;">
     Projets Web 
   </h2>
@@ -404,7 +445,7 @@
 
     <!-- Projet HTML 1 -->
 <!-- Projet HTML 1 : Site Portfolio -->
-<div data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1200" class="col">
+<div class="col project-card" data-category="ecole">
   <div class="card h-100">
     <div class="card-body">
       <h5 class="card-title"> 
@@ -430,7 +471,7 @@
       
     </div>
 
-    <div data-aos="fade-up" data-aos-delay="600" data-aos-duration="1200" class="card-footer bg-transparent">
+    <div class="card-footer bg-transparent">
 
       <a 
         href="https://github.com/davycx10/davycx10.github.io" target="_blank" 
@@ -442,7 +483,7 @@
 </div>
 
 <!-- Projet HTML 2 : Gestion de Stock -->
-<div data-aos="flip-up" data-aos-delay="700" data-aos-duration="1200" class="col">
+<div class="col project-card" data-category="ecole">
   <div class="card h-100">
     <div class="card-body">
       <h5 class="card-title"> 
@@ -475,7 +516,7 @@
       
     </div>
 
-    <div data-aos="zoom-in-up" data-aos-delay="1100" data-aos-duration="1200" class="card-footer bg-transparent">
+    <div class="card-footer bg-transparent">
       <a 
         href="https://github.com/davycx10/gestion-stock" target="_blank" 
         class="btn btn-outline-primary">Voir sur GitHub
@@ -486,7 +527,7 @@
 </div>
 
 <!-- Projet HTML 3 : Vehicle Reservation -->
-<div data-aos="fade-up" data-aos-delay="1200" data-aos-duration="1200" class="col">
+<div class="col project-card" data-category="ecole">
   <div class="card h-100">
     <div class="card-body">
       <h5 class="card-title"> 
@@ -519,7 +560,7 @@
 
     </div>
 
-    <div data-aos="flip-up" data-aos-delay="700" data-aos-duration="1200"class="card-footer bg-transparent">
+    <divclass="card-footer bg-transparent">
       <a 
         href="https://github.com/davycx10/chauffeurs" target="_blank" 
         class="btn btn-outline-primary">Voir sur GitHub
@@ -548,22 +589,22 @@
       </div>
     </div> -->
 
-  </div>
 
   <!-- Séparateur -->
-  <hr class="my-5">
+  <div class="bloc-section" data-section="java">
+<hr class="my-5">
 
 <!-- ======================== -->
 <!-- SECTION : PROJETS JAVA -->
 <!-- ======================== -->
-<h2 data-aos="fade-up" data-aos-delay="250" class="mb-4 d-flex align-items-center">
+<h2 class="mb-4 d-flex align-items-center">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-plain-wordmark.svg" alt="Java" style="height: 32px; margin-right: 10px;">
   Projets Java
 </h2>
 <div class="row row-cols-1 row-cols-md-2 g-4">
 
   <!-- Projet Java 1 -->
-<div data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1200" class="col">
+<div class="col project-card" data-category="ecole">
   <div class="card h-100">
     <div class="card-body">
       <h5 class="card-title"> 
@@ -596,7 +637,7 @@
       
     </div>
 
-    <div data-aos="flip-up" data-aos-delay="700" data-aos-duration="1200" class="card-footer bg-transparent">
+    <div class="card-footer bg-transparent">
       <a 
         href="https://github.com/davycx10/project-ratp#" target="_blank" 
         class="btn btn-outline-primary">Voir sur GitHub
@@ -614,20 +655,20 @@
         <!-- <h5 class="card-title"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg" alt="Java" style="height: 32px; margin-right: 10px;"> -->
           <!-- Project RATP — Programmation orientée objet en Java -->
         <!-- </h5> -->
-          <!-- <p data-aos="fade-left" data-aos-delay="350" class="card-text"> -->
+          <!-- <p class="card-text"> -->
               <!-- Ce dépôt illustre et fait pratiquer les concepts fondamentaux de la POO en Java, -->
               <!-- à travers un exemple concret inspiré de la RATP (réseau de transport parisien). -->
               <!-- Le projet sert de support pédagogique pour modéliser stations, lignes, bus, métros, et leurs interactions. -->
           <!-- </p> -->
 <!--  -->
-          <!-- <p data-aos="fade-right" data-aos-delay="350" class="card-text"> -->
+          <!-- <p class="card-text"> -->
             <!-- Les objectifs incluent la compréhension et la mise en œuvre des classes (attributs, méthodes, constructeurs), -->
             <!-- l’exploration de l’héritage et du polymorphisme, ainsi que l’application de ces notions dans un scénario réaliste -->
             <!-- de réseau de transport pour concevoir une architecture claire, réutilisable et évolutive. -->
           <!-- </p> -->
 <!--  -->
 <!--  -->
-          <!-- <p data-aos="fade-left" data-aos-delay="370" class="card-text"> -->
+          <!-- <p class="card-text"> -->
             <!-- Le projet propose une modélisation orientée objet du domaine (stations, lignes, véhicules, itinéraires), -->
             <!-- permettant d’expérimenter la conception, l’encapsulation et les relations entre objets, -->
             <!-- tout en renforçant les bonnes pratiques de développement en Java. -->
@@ -662,4 +703,5 @@
 
   <!-- projet java 4 -->
 
+</div>
 </div>

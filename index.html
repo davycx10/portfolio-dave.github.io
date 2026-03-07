@@ -48,7 +48,20 @@
           return res.text();
         })
         .then(html => {
-          document.getElementById(targetId).innerHTML = html;
+          const target = document.getElementById(targetId);
+          target.innerHTML = html;
+          // Les scripts dans innerHTML ne s'exécutent pas automatiquement,
+          // on les recrée manuellement pour les forcer à tourner
+          target.querySelectorAll('script').forEach(oldScript => {
+            const newScript = document.createElement('script');
+            if (oldScript.src) {
+              newScript.src = oldScript.src;
+            } else {
+              newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript);
+            oldScript.remove();
+          });
         })
         .catch(err => {
           document.getElementById(targetId).innerHTML = `<p>${err.message}</p>`;
