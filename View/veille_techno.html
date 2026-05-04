@@ -22,14 +22,75 @@
         <div class="bg-light p-4 rounded shadow-sm">
           <h3 class="fw-semibold mb-3">Et du côté d’Intel ?</h3>
           <p>
-            Depuis 2022, <strong>Intel Arc Alchemist</strong> propose aussi des unités dédiées au Ray Tracing matériel. 
-            Avec sa technologie <strong>XeSS</strong> (Xe Super Sampling), Intel offre une alternative à DLSS (NVIDIA) et FSR (AMD), 
-            permettant de profiter du Ray Tracing tout en maintenant de bonnes performances.
+            Théorisé dès 1968 par <strong>Arthur Appel</strong> (sous le nom de Ray Casting), 
+            le concept a évolué vers le Ray Tracing moderne en 1979 (Whitted) 
+            puis le Path Tracing en 1984 (Kajiya). Longtemps réservé au cinéma d'animation  notamment avec le studio Pixar, 
+            il est devenu le standard du jeu vidéo moderne depuis 2018.
           </p>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- concept technique <-- fonctionnement inversé caméra -->
+  <section class="mb-5" data-aos="fade-up">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="fw-semibold mb-4"><i class="bi bi-cpu me-2"></i> Le fonctionnement : L'inversion du regard</h2>
+      <p>
+        Calculer tous les rayons émis par une source lumineuse (le Soleil par exemple) demanderait une puissance infinie. Pour simplifier, on utilise une approche <strong>inversée</strong> :
+      </p>
+      <ul>
+        <li>C'est la <strong>caméra virtuelle</strong> (votre œil) qui projette un rayon à travers chaque pixel.</li>
+        <li>Le rayon rebondit sur les objets : s'il finit par toucher une source de lumière, le pixel s'affiche. S'il n'en trouve pas, le pixel reste dans l'ombre.</li>
+      </ul>
+    </div>
+    <!-- Image en dessous du texte -->
+    <div class="col-12 mt-4">
+      <div class="rounded overflow-hidden shadow-sm border">
+        <img src="doc/picture/object_ray_tracing.png" 
+             alt="Démonstration du lancer de rayons inversé" 
+             class="img-fluid w-100">
+      </div>
+      <p class="text-center text-muted small mt-2">Schéma du parcours des rayons de la caméra vers la source lumineuse.</p>
+    </div>
+  </div>
+</section>
+
+<!-- section methode de mise en oeuvre -->
+<section class="mb-5" data-aos="fade-up">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="fw-semibold mb-4"><i class="bi bi-gear me-2"></i> Méthodes de mise en œuvre</h2>
+      <p>
+        L'intégration du Ray Tracing dépend de la puissance disponible et du rendu souhaité :
+      </p>
+      <ul class="row list-unstyled">
+        <li class="col-md-4"><strong>Ray Tracing matériel :</strong> Utilise les "RT Cores" dédiés des cartes graphiques.</li>
+        <li class="col-md-4"><strong>Ray Tracing logiciel :</strong> Calculé par le processeur (CPU), beaucoup plus lent.</li>
+        <li class="col-md-4"><strong>Hybridation :</strong> Mélange entre rendu classique (Rasterization) et Ray Tracing (c'est le <em>Path traced</em>) .</li>
+      </ul>
+    </div>
+
+    <!-- Images en dessous du texte -->
+    <div class="col-12 mt-4">
+      <div class="row g-4">
+        <!-- Image 1 : Techniques -->
+        <div class="col-md-6">
+          <div class="rounded overflow-hidden shadow-sm">
+            <img src="doc/picture/ray_tracing_technique.png" alt="Techniques de Ray Tracing" class="img-fluid w-100">
+          </div>
+        </div>
+        <!-- Image 2 : Comparaison Rendu (Path Tracing vs Rasterization) -->
+        <div class="col-md-6">
+          <div class="rounded overflow-hidden shadow-sm">
+            <img src="doc/picture/ray_tracing_hybride.png" alt="Comparaison Rasterization vs Ray Tracing" class="img-fluid w-100">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- SECTION VEILLE VIDEO -->
   <section class="mb-5">
@@ -59,6 +120,7 @@
     </div>
   </section>
 
+
   <!-- SECTION AVANTAGES LIMITES -->
   <section class="row g-4 mb-5">
     <div class="col-md-6" data-aos="fade-up">
@@ -85,12 +147,16 @@
       <div class="col-lg-10 mx-auto">
         <h2 class="fw-semibold mb-4" data-aos="fade-up"><i class="bi bi-clock-history me-2"></i> Évolution du Ray Tracing</h2>
         <ul class="list-group list-group-flush">
+          <li class="list-group-item" data-aos="fade-up"><strong>1968 :</strong> Le <strong>Ray casting</strong>est théorisé par Arthur Appel.</li>
+          <li class="list-group-item" data-aos="fade-up"><strong>1979 :</strong> Le concept de <em>ray casting</em> evolue vers le <strong>ray tracing modern</strong> (Whitted).</li>
+          <li class="list-group-item" data-aos="fade-up"><strong>1984 :</strong> Le conept à evolué vers le <strong>Path Tracing</strong> (Kajiya).</li>
           <li class="list-group-item" data-aos="fade-up"><strong>2018 :</strong> NVIDIA lance les RTX 20xx avec Ray Tracing matériel.</li>
           <li class="list-group-item" data-aos="fade-up"><strong>2020 :</strong> Minecraft RTX montre le Ray Tracing temps réel.</li>
           <li class="list-group-item" data-aos="fade-up"><strong>2022 :</strong> Unreal Engine 5 intègre Lumen pour du RT hybride.</li>
           <li class="list-group-item" data-aos="fade-up"><strong>2022 :</strong> Intel lance ses GPU Arc Alchemist avec Ray Tracing et XeSS.</li>
           <li class="list-group-item" data-aos="fade-up"><strong>2023-2024 :</strong> DLSS 3.5 avec Ray Reconstruction pour un rendu plus fluide.</li>
-          <li class="list-group-item" data-aos="fade-up"><strong>2025 :</strong> Lancement de DLSS 4 avec Multi Frame Generation et Ray Reconstruction, rendant le Ray Tracing plus fluide et généralisé..</li>
+          <li class="list-group-item" data-aos="fade-up"><strong>2025 :</strong> Lancement du DLSS 4 avec Multi Frame Generation et Ray Reconstruction, rendant le Ray Tracing plus fluide et généralisé..</li>
+          <li class="list-group-item" data-aos="fade-up"><strong>2026 :</strong> Lancement du DLSS 5  ..... </li>
         </ul>
       </div>
     </div>
