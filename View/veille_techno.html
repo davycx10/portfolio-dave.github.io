@@ -20,11 +20,11 @@
 
       <div class="col-lg-6" data-aos="fade-left">
         <div class="bg-light p-4 rounded shadow-sm">
-          <h3 class="fw-semibold mb-3">Et du côté d’Intel ?</h3>
+          <h3 class="fw-semibold mb-3">suite </h3>
           <p>
             Théorisé dès 1968 par <strong>Arthur Appel</strong> (sous le nom de Ray Casting), 
-            le concept a évolué vers le Ray Tracing moderne en 1979 (Whitted) 
-            puis le Path Tracing en 1984 (Kajiya). Longtemps réservé au cinéma d'animation  notamment avec le studio Pixar, 
+            le concept a évolué vers le <strong>Ray Tracing moderne</strong> en 1979 <em>(Whitted)</em> 
+            puis le <strong>Path Tracing</strong> en 1984 <em>(Kajiya)</em>. Longtemps réservé au cinéma d'animation  notamment avec le studio Pixar, 
             il est devenu le standard du jeu vidéo moderne depuis 2018.
           </p>
         </div>
@@ -38,10 +38,11 @@
     <div class="col-12">
       <h2 class="fw-semibold mb-4"><i class="bi bi-cpu me-2"></i> Le fonctionnement : L'inversion du regard</h2>
       <p>
-        Calculer tous les rayons émis par une source lumineuse (le Soleil par exemple) demanderait une puissance infinie. Pour simplifier, on utilise une approche <strong>inversée</strong> :
+        Calculer tous les rayons émis par une source lumineuse (le Soleil par exemple) demanderait une puissance infinie. 
+        Pour simplifier, on utilise une approche <strong>inversée</strong> :
       </p>
       <ul>
-        <li>C'est la <strong>caméra virtuelle</strong> (votre œil) qui projette un rayon à travers chaque pixel.</li>
+        <li>C'est la <strong>caméra virtuelle</strong>  qui projette un rayon à travers chaque pixel.</li>
         <li>Le rayon rebondit sur les objets : s'il finit par toucher une source de lumière, le pixel s'affiche. S'il n'en trouve pas, le pixel reste dans l'ombre.</li>
       </ul>
     </div>
@@ -68,7 +69,7 @@
       <ul class="row list-unstyled">
         <li class="col-md-4"><strong>Ray Tracing matériel :</strong> Utilise les "RT Cores" dédiés des cartes graphiques.</li>
         <li class="col-md-4"><strong>Ray Tracing logiciel :</strong> Calculé par le processeur (CPU), beaucoup plus lent.</li>
-        <li class="col-md-4"><strong>Hybridation :</strong> Mélange entre rendu classique (Rasterization) et Ray Tracing (c'est le <em>Path traced</em>) .</li>
+        <li class="col-md-4"><strong>Hybridation :</strong> Mélange entre rendu classique (Rasterization) et Ray Tracing (c'est le <em>Ray traced</em>) .</li>
       </ul>
     </div>
 
